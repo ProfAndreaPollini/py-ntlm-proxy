@@ -224,21 +224,23 @@ class ProxyThread(threading.Thread):
                 stats_data["status"] = f"Errore: {str(e)}"
         finally:
             with stats_lock:
-                if not stats_data["status"].startswith("Errore:") and not stats_data["status"].startswith("Configurazione richiesta:"):
+                if not stats_data["status"].startswith("Errore:") and not stats_data[
+                    "status"
+                ].startswith("Configurazione richiesta:"):
                     stats_data["status"] = "Inattivo"
         logger.info("Thread del proxy terminato.")
 
     def load_settings(self) -> dict:
         config = configparser.ConfigParser()
-        
+
         # Check if config file exists and has the required sections
         if not os.path.exists(CONFIG_FILE):
             raise ValueError(
                 "File di configurazione non trovato. Configuralo dalla UI."
             )
-        
+
         config.read(CONFIG_FILE)
-        
+
         # Check if required sections exist
         if not config.has_section("Auth"):
             raise ValueError(
@@ -248,7 +250,7 @@ class ProxyThread(threading.Thread):
             raise ValueError(
                 "Sezione 'Proxy' mancante nel file di configurazione. Configuralo dalla UI."
             )
-        
+
         # Try to get configuration values with better error handling
         try:
             settings = {
@@ -261,13 +263,13 @@ class ProxyThread(threading.Thread):
             raise ValueError(
                 f"Errore nel file di configurazione: {e}. Configuralo dalla UI."
             )
-        
+
         # Check if any required values are empty
         if not settings["username"] or not settings["domain"]:
             raise ValueError(
                 "Username o Domain mancanti nel file di configurazione. Configuralo dalla UI."
             )
-        
+
         full_username = f"{settings['username']}@{settings['domain']}"
         password = keyring.get_password(KEYRING_SERVICE, full_username)
         if not password:
@@ -384,7 +386,7 @@ class ProxyUI(ctk.CTk):
     def _save_config_from_ui(self):
         # Ensure the config directory exists
         os.makedirs(APP_DATA_DIR, exist_ok=True)
-        
+
         config = configparser.ConfigParser()
         config["Auth"] = {
             "Username": self.entries["username"].get(),
