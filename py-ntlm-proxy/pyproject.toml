@@ -1,0 +1,16 @@
+[project]
+name = "py-ntlm-proxy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "keyring>=25.6.0",
+    "ntlm-auth>=1.5.0",
+    "proxy-py[http-tools,uvloop]>=2.4.10",
+    "pystray>=0.19.5",
+    "pywin32>=310",
+    "pywin32-ctypes>=0.2.3",
+    "winloop>=0.1.8",
+]
