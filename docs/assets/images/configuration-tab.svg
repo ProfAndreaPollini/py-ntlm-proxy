@@ -1,0 +1,38 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect fill="#2c3e50" id="canvas_background" height="502" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <rect rx="15" id="svg_1" height="368" width="702" y="65.5" x="49" stroke-width="0" stroke="#000" fill="#1e1e1e"/>
+  <rect id="svg_2" height="37" width="702" y="65.5" x="49" stroke-width="0" stroke="#000" fill="#252525"/>
+  <rect stroke="#000" id="svg_3" height="34" width="702" y="399.5" x="49" stroke-width="0" fill="#252525"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="24" id="svg_4" y="92.5" x="368" stroke-width="0" stroke="#000" fill="#ffffff">py-ntlm-proxy</text>
+  <rect rx="5" id="svg_5" height="35" width="170" y="121.5" x="60" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect rx="5" id="svg_6" height="35" width="170" y="121.5" x="243" stroke-width="0" stroke="#000" fill="#2979ff"/>
+  <rect rx="5" id="svg_7" height="35" width="170" y="121.5" x="426" stroke-width="0" stroke="#000" fill="#333333"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_8" y="144.5" x="114" stroke-width="0" stroke="#000" fill="#bbbbbb">Status</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_9" y="144.5" x="271" stroke-width="0" stroke="#000" fill="#ffffff">Configuration</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_10" y="144.5" x="459" stroke-width="0" stroke="#000" fill="#bbbbbb">Activity Log</text>
+  <rect id="svg_11" height="33" width="223" y="188.5" x="127" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect id="svg_12" height="33" width="223" y="233.5" x="127" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect id="svg_13" height="33" width="223" y="278.5" x="127" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect id="svg_14" height="33" width="223" y="323.5" x="127" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect id="svg_15" height="33" width="223" y="368.5" x="127" stroke-width="0" stroke="#000" fill="#333333"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_16" y="208.5" x="137" stroke-width="0" stroke="#000" fill="#ffffff">username</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_17" y="253.5" x="137" stroke-width="0" stroke="#000" fill="#ffffff">example-domain</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_18" y="298.5" x="137" stroke-width="0" stroke="#000" fill="#ffffff">••••••••••••</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_19" y="343.5" x="137" stroke-width="0" stroke="#000" fill="#ffffff">corp-proxy.example.com:8080</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_20" y="388.5" x="137" stroke-width="0" stroke="#000" fill="#ffffff">3128</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_21" y="186.5" x="414" stroke-width="0" stroke="#000" fill="#ffffff">Username</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_22" y="230.5" x="414" stroke-width="0" stroke="#000" fill="#ffffff">Domain</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_23" y="277.5" x="414" stroke-width="0" stroke="#000" fill="#ffffff">Password</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_24" y="322.5" x="414" stroke-width="0" stroke="#000" fill="#ffffff">Parent Proxy</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_25" y="367.5" x="414" stroke-width="0" stroke="#000" fill="#ffffff">Listen Port</text>
+  <rect rx="5" id="svg_26" height="35" width="281" y="190.5" x="414" stroke-width="0" stroke="#000" fill="#2979ff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="16" id="svg_27" y="213.5" x="463" stroke-width="0" stroke="#000" fill="#ffffff">Save Credentials and Restart</text>
+ </g>
+</svg>

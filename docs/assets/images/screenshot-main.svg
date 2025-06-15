@@ -1,0 +1,27 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect fill="#2c3e50" id="canvas_background" height="502" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <rect rx="15" id="svg_1" height="368" width="702" y="65.5" x="49" stroke-width="0" stroke="#000" fill="#1e1e1e"/>
+  <rect id="svg_2" height="37" width="702" y="65.5" x="49" stroke-width="0" stroke="#000" fill="#252525"/>
+  <rect stroke="#000" id="svg_3" height="34" width="702" y="399.5" x="49" stroke-width="0" fill="#252525"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="24" id="svg_4" y="92.5" x="368" stroke-width="0" stroke="#000" fill="#ffffff">py-ntlm-proxy</text>
+  <rect rx="5" id="svg_5" height="35" width="170" y="121.5" x="60" stroke-width="0" stroke="#000" fill="#2979ff"/>
+  <rect rx="5" id="svg_6" height="35" width="170" y="121.5" x="243" stroke-width="0" stroke="#000" fill="#333333"/>
+  <rect rx="5" id="svg_7" height="35" width="170" y="121.5" x="426" stroke-width="0" stroke="#000" fill="#333333"/>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_8" y="144.5" x="114" stroke-width="0" stroke="#000" fill="#ffffff">Status</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_9" y="144.5" x="271" stroke-width="0" stroke="#000" fill="#bbbbbb">Configuration</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="18" id="svg_10" y="144.5" x="459" stroke-width="0" stroke="#000" fill="#bbbbbb">Activity Log</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_11" y="194.5" x="127" stroke-width="0" stroke="#000" fill="#ffffff">Proxy Status: Active</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_12" y="231.5" x="127" stroke-width="0" stroke="#000" fill="#ffffff">Requests: 124</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_13" y="267.5" x="127" stroke-width="0" stroke="#000" fill="#ffffff">Uptime: 00:45:22</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_14" y="305.5" x="127" stroke-width="0" stroke="#000" fill="#ffffff">Listening on: 127.0.0.1:3128</text>
+  <text xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="20" id="svg_15" y="342.5" x="127" stroke-width="0" stroke="#000" fill="#ffffff">Parent Proxy: corp-proxy.example.com:8080</text>
+  <circle id="svg_16" r="14.036" cy="194.5" cx="96" stroke-width="0" stroke="#000" fill="#4CAF50"/>
+ </g>
+</svg>
