@@ -14,6 +14,39 @@ import os
 import socket
 import base64
 import asyncio
+import sys
+
+# --- CONTROLLO SINGLE INSTANCE ---
+try:
+    import win32event
+    import win32api
+    import winerror
+
+    mutex_name = "Global\\PyNtlmProxyApplicationMutex"
+    mutex = win32event.CreateMutex(None, 1, mutex_name)
+    last_error = win32api.GetLastError()
+
+    if last_error == winerror.ERROR_ALREADY_EXISTS:
+        logging.warning("Un'altra istanza dell'applicazione è già in esecuzione.")
+        # Chiudi forzatamente il mutex per evitare leak
+        if mutex:
+            win32api.CloseHandle(mutex)
+        sys.exit(0)
+
+    # Registra una funzione per rilasciare il mutex all'uscita
+    def cleanup_mutex():
+        if mutex:
+            win32api.CloseHandle(mutex)
+
+    import atexit
+
+    atexit.register(cleanup_mutex)
+
+except ImportError:
+    logging.warning(
+        "Librerie win32 non disponibili, il controllo di istanza singola è disabilitato."
+    )
+    mutex = None
 
 # --- LIBRERIE PER LE PRESTAZIONI ---
 try:
@@ -254,7 +287,7 @@ class ProxyThread(threading.Thread):
             with Proxy(
                 port=settings["listen_port"],
                 hostname=ipaddress.ip_address("127.0.0.1"),
-                plugins=["main.NtlmProxyPlugin"],
+                plugins=[NtlmProxyPlugin],
             ):
                 # Keep the proxy running until shutdown is requested
                 while not shutdown_event.is_set():
@@ -573,6 +606,8 @@ class AppManager:
         self.stop_proxy_thread()
         self.tray_icon.stop()
         self.ui.quit()
+        # Assicuriamoci che l'applicazione termini completamente
+        sys.exit(0)
 
 
 if __name__ == "__main__":
