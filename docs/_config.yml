@@ -1,0 +1,28 @@
+title: py-ntlm-proxy
+description: A modern NTLM/NTLMv2 authenticating HTTP proxy with a graphical user interface
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+- jekyll-seo-tag
+- jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
+github:
+  is_project_page: true
+  repository_url: https://github.com/ProfAndreaPollini/py-ntlm-proxy
+
+nav:
+  - Home: /
+  - Features: /features
+  - Installation: /installation
+  - Quick Start: /quick-start
+  - Configuration: /configuration
+  - Usage Examples: /usage
+  - Advanced: /advanced
+  - Troubleshooting: /troubleshooting
+  - Contributing: /contributing
+  - License: /license
