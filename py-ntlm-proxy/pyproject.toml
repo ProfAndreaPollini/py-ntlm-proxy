@@ -14,3 +14,10 @@ dependencies = [
     "pywin32-ctypes>=0.2.3",
     "winloop>=0.1.8",
 ]
+
+[dependency-groups]
+dev = [
+    "isort>=6.0.1",
+    "mypy>=1.16.0",
+    "ruff>=0.11.13",
+]

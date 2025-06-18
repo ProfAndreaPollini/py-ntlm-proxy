@@ -1,7 +1,9 @@
 # run_proxy_app.py (versione con import corretti)
 # -*- coding: utf-8 -*-
 
-import tkinter
+import tkinter  # noqa: F401
+
+import keyring.errors
 import customtkinter as ctk
 import configparser
 import logging
@@ -23,7 +25,9 @@ try:
     import winerror
 
     mutex_name = "Global\\PyNtlmProxyApplicationMutex"
-    mutex = win32event.CreateMutex(None, 1, mutex_name)
+    import ctypes  # noqa: F401
+
+    mutex = win32event.CreateMutex(None, 1, mutex_name)  # type: ignore
     last_error = win32api.GetLastError()
 
     if last_error == winerror.ERROR_ALREADY_EXISTS:
@@ -78,9 +82,9 @@ CONFIG_FILE = os.path.join(APP_DATA_DIR, "cntlm.ini")
 KEYRING_SERVICE = "PythonNtlmProxyApp"
 os.makedirs(APP_DATA_DIR, exist_ok=True)
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s"
 )
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("PythonNtlmProxy")
 
 # --- STATO CONDIVISO TRA THREAD ---
 uri_log_queue = deque(maxlen=50)
@@ -283,6 +287,10 @@ class ProxyThread(threading.Thread):
 
             # Create and start proxy with our custom NTLM plugin
             import ipaddress
+
+            logger.info(
+                f"Avvio del proxy NTLM su {settings['listen_port']} con parent proxy {settings['parent_proxy']}"
+            )
 
             with Proxy(
                 port=settings["listen_port"],
@@ -512,10 +520,13 @@ class ProxyUI(ctk.CTk):
                 text_color="green",
             )
             self.proxy_manager.stop_proxy_thread()
-        except keyring.errors.PasswordNotFoundError:
+        except keyring.errors.PasswordDeleteError as e:
             self.config_status_label.configure(
-                text="Nessuna credenziale da eliminare.", text_color="orange"
+                text=f"Errore eliminazione credenziali: {e}", text_color="red"
             )
+            # self.config_status_label.configure(
+            #     text="Nessuna credenziale da eliminare.", text_color="orange"
+            # )
         except Exception as e:
             self.config_status_label.configure(
                 text=f"Errore eliminazione credenziali: {e}", text_color="red"
@@ -602,6 +613,8 @@ class AppManager:
         return Icon("PythonProxy", image, "Proxy NTLM", menu)
 
     def quit_app(self):
+        """Chiude l'applicazione in modo pulito."""
+        logger.info("Chiusura dell'applicazione in corso...")
         shutdown_event.set()
         self.stop_proxy_thread()
         self.tray_icon.stop()
